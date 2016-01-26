@@ -35,13 +35,9 @@ var all = {
   // List of user roles
   userRoles: ['guest', 'user', 'admin'],
 
-  // MongoDB connection options
-  mongo: {
-    options: {
-      db: {
-        safe: true
-      }
-    }
+  algoliaConfig: {
+    appId: 'QZ81AZLZUG',
+    secret: '6eb1bd16ced3bec22dc77160762829b8'
   },
 
 };

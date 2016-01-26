@@ -1,26 +1,4 @@
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-          <div class="logo-beta">Bêta</div>
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <ul class="nav navbar-nav">
-                  <li><img class="logo" src="img/logo_marianne.png" alt="Accueil - apiparticulier.sgmap.fr"></li>
-                  <li><a ui-sref="landingPage" class="navbar-brand title" title="Accueil - apiparticulier.sgmap.fr" href="/">API.GOUV.FR</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.container -->
-    </nav>
-
-
     <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">
@@ -35,6 +13,12 @@
                           </div>
                           <button type="submit" class="btn btn-default">Rechercher</button>
                         </form>
+                        <!-- <form class="form" ng-model="query">
+                            <label for="apis">
+                              <input class="form-control" id="recherche" type="text" placeholder='Rechercher une api' ng-model="query" />
+                            </label>
+                            <button type="submit" class="btn btn-default" id="recherche" ng-click="search(query);">Rechercher</button>
+                         </form> -->
                         <p>Exemples : <a href="">attestation fiscale</a>, <a href="">sélectionner une parcelle</a>, <a href="">adresse</a>, <a hred="">coût d’embauche</a>, <a href="">aides sociales</a> ...</p>
                     </div>
                 </div>
@@ -55,8 +39,9 @@
             <div class="row">
                 <div class="col-lg-7 col-sm-9">
                     <h2 class="section-heading">Pourquoi api.gouv ?</h2>
-                    <p class="lead">Pour authentifier simplement un usager, pour ne pas demander des informations confidentielles que l’administration possède déjà, pour guider l'usager dans sa saisie d'informations, pour contextualiser un service dans sa situation personnelle, ... autant de cas d'usage disponible via les API de l'Etat.</p>
+                    <p class="lead">Pour authentifier simplement un usager, pour le guider dans la saisie d'informations, pour ne pas lui demander des informations que l’administration possède déjà, pour personnaliser un service selon la situation de l’usager, ... autant de cas d'usage disponible via les API de l'Etat. A vous de créer d’autres usages.</p>
                 </div>
+                <div class="col-rg-3 col-lg-offset-1 col-sm-3"><a href="/apis">Voir toutes nos apis</a></div>
             </div>
 
         </div>
@@ -155,14 +140,6 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- <ul id="exemples">
-                      <li>LaBonneBoite uses BAN</li>
-                      <li>Marchés Sécurisés uses MPS</li>
-                      <li>FranceAgrimer uses API Carto : Vitiplantation</li>
-                      <li>BPI simplifie ses subventions avec API Entreprise</li>
-                      <li>Bourse Simplifiée utilise API Particulier</li>
-                      <li>mes-aides utilise OpenFisca</li>
-                    </ul> -->
                 </div>
 
             </div>
@@ -178,16 +155,44 @@
   </div>
     <!-- /.banner -->
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-          <div class="row">
-              <div class="center-block">
-                    <p class="copyright text-muted small">Copyright &copy; <a href="http://etatplateforme.modernisation.gouv.fr">SGMAP</a> 2016. All Rights Reserved <a href="mailto:apiparticulier@sgmap.fr">mas@api.sgmap.fr</a></p>
 
-                </div>
-            </div>
-        </div>
-    </footer>
+<script type="text/javascript">
+  
 
-    <!-- Hotjar Tracking Code for octo.com -->
+  var INDEX_NAME = "mas";
+  var PARAMS = {
+    hitsPerPage: 10,
+    maxValuesPerFacet: 8,
+    facets: ['donnees', 'activites'],
+    disjunctiveFacets: ['particulier', 'entreprise']
+  };
+
+  var client = algoliasearch('QZ81AZLZUG', '6eb1bd16ced3bec22dc77160762829b8');
+  var index = client.initIndex(INDEX_NAME);
+
+  $('#recherche').autocomplete({ hint: false }, [
+    {
+      source: function(q, cb) {
+        // console.log("search : " + cb);
+        index.search(q, { hitsPerPage: 15 }, function(error, content) {
+          if (error) {
+            cb([]);
+            return;
+          }
+          cb(content.hits, content);
+          console.log(content);
+        });
+      },
+      displayKey: 'name',
+      templates: {
+        suggestion: function(suggestion) {
+          return suggestion._highlightResult.API.value;
+        }
+      }
+    }
+  ]).on('autocomplete:selected', function(event, suggestion, dataset) {
+    //window.location = '/api/infoGen/' + suggestion.id;
+  });
+
+
+</script>

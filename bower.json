@@ -12,7 +12,10 @@
     "angular-route": ">=1.2.*",
     "angular-bootstrap": "~0.11.0",
     "font-awesome": ">=4.1.0",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "algolia-autocomplete.js": "~0.14.1",
+    "algoliasearch": "~3.10.2",
+    "algoliasearch-helper": "~2.8.0"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
