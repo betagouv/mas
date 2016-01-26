@@ -65,6 +65,60 @@ h6 {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
 }
 
+.circle {
+    width: 100px;
+    height: 100px;
+}
+.taxonomie {
+    width: 100px;
+    height: 100px;
+    padding: 2px;
+    text-align: center;
+}
+.circles-separator {
+    height: 3px;
+    width: 3px;
+}
+
+.sigle {
+    display: initial;
+}
+.detail { 
+    display: none;
+    font-size: 12px
+}
+.taxonomie:hover .sigle{
+    display: none;
+}
+.taxonomie:hover .detail{ 
+    display: block;
+}
+
+.sdap {
+    background: lightcoral;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+}
+.ascdr {
+    background: lightgreen;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 50%;
+}
+.cs {
+    background: lightskyblue;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 50%;
+}
+.sd {
+    background: lightsalmon;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
 
 .algolia-autocomplete {
   width: 100%;
