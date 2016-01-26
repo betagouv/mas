@@ -1,0 +1,323 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,client}) app/app.css -->
+    <link rel="stylesheet" href="/mas/client/app/app.css">
+      <!-- injector:css -->
+      <link rel="stylesheet" href="/mas/client/app/app.css">
+      <link rel="stylesheet" href="/mas/client/app/main/main.css">
+      <!-- endinjector -->
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+          <div class="logo-beta">Bêta</div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="nav navbar-nav">
+                  <li><img class="logo" src="https://apiparticulier.sgmap.fr/cb7bdeec0297d4d4d42677856c354a7d.png" alt="Accueil - apiparticulier.sgmap.fr"></li>
+                  <li><a ui-sref="landingPage" class="navbar-brand title" title="Accueil - api.gouv.fr" href="/">API.GOUV.FR</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="content-section-b ng-scope">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="section-heading">Toutes nos APIs</h1>
+        <ul id="apis" class="card-list">
+            <!-- ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">laBonneFormation</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        Recherchez une formation efficace pour le retour à l'emploi. Les formations sont disponibles sur la France entière et triés par Taux de Retour à l'Emploi dans les 12 mois. Le moteur liste également les financements disponibles selon le contexte du demandeur (apprentissage, chômage, insertion, compte personnel formation ...).
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">laBonneBoite</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        Trouvez les entreprises qui vont recruter près d'une adresse. Mieux qu'un simple annuaire, la Bonne Boite cible pour vous les entreprises ayant des perspectives d'embauche élevées. Ce ciblage est obtenu par l'analyse de millions de recrutements sur toutes les entreprises françaises.
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">les-aides</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        Toutes les aides en 1 clic pour votre Entreprise. Sélectionnez votre profil, puis précisez votre besoin. Les-aides référence tous les dispositifs d'aides publiques aux entreprises en France.
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">mes-aides</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        Saisissez la situation de votre foyer, et vous connaîtrez votre éligibilité aux principales prestations sociales : Revenu de Solidarité Active (RSA) socle et activité, Allocation Spécifique de Solidarité (ASS), Couverture Médicale Universelle (CMU), Aide Complémentaire Santé (ACS), Allocation de Solidarité aux Personnes âgées (ASPA), Allocation Familiales (Allocation Soutien Familial, Complément Familial), et Allocations Logement (Allocation Logement Social, Allocation Logement Familial, Aide Personnalisée au Logement). Mes-aides intègre progressivement toutes les aides extra-légales distribuées par les collectivités. 
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">API Embauche</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        Permet l'estimation rapide et précise du coût d'une embauche quelque soit le contexte de l'entreprise et du salarié : salaire, type de contrat de travail, temps partiel, activité, géographie, taille, ...
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">Open Fisca</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        OpenFisca est un moteur ouvert de micro-simulation du système socio-fiscal. Il permet de calculer simplement un grand nombre de prestations sociales et d'impôts payés, par les ménages, et de simuler l'impact de réformes sur leur budget. L'API web permet d'utiliser le moteur OpenFisca, sans l'installer, depuis n'importe quelle page web. Grâce aux serveurs mis à votre disposition sur Internet par Etalab, vous pouvez utiliser l'API pour illustrer un sujet de recherche, un article économique, réaliser une infographie dynamique, etc.
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">MPS</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        Acteurs de la commande publique, n'exigez plus qu'un numéro de SIRET pour accepter toutes les candidatures aux marchés publics.
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">France Connect</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        Facilitez l'identification et l'authentification des usagers sur votre site : utilisez FranceConnect !
+Rapide à mettre en oeuvre, FranceConnect permet aux usagers de se connecter sur votre site à partir d'identités vérifiées par nos partenaires : impot.gouv.fr, LaPoste, Ameli.fr ...
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">API Particulier</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        En recueillant le consentement de l'usager, collectez les pièces justificatives dont vous avez besoin sans les lui demander (avis d'imposition, attestation CAF, ..)
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">API Référentiels Nationaux</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        Vous manipulez la liste des modèles de véhicules, celles des établissements du secondaire ou encore les équipements d'une commune ? Accédez aux référentiels nationaux pour simplifier la saisie de vos formulaires !
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">API Entreprise</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        Obtenez en un appel toutes les informations publiques sur une entreprise ! En recueillant de plus son consentement, récupérez toutes les pièces jusitficatives que possède l'administration et les organismes de certification (attestation fiscale, label qualité, attestation sociale, ...)
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">API Carto</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        Cette API transforme vos formulaires destinés à capturer des données géographiques (adresse, parcelles, empreinte , appartenance ou pas à des zonages administratifs ..) en une expérience fluide et visuelle.
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits --><li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6 ng-scope">
+                <div class="card dataset-card">
+                    <a class="card-logo" href="#">
+                        <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
+
+                    </a>
+                    <div class="card-body">
+                        <h4>
+                            <a href="#" title="La bonne boîte" class="ng-binding">BAN</a>
+                        </h4>
+                    </div>
+                    <a class="rollover fade in ng-binding" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                        La Base Adresse Nationale est une base de données qui a pour but de référencer l'intégralité des adresses du territoire français. Son API vous permet d'offrir des formulaires de saisie en auto-completion, de géocoder une adresse ou de reverse géocoder (quelle est l'adresse de cette latitude/longitude ?), et enfin de poster des demandes de mises à jour.
+                    </a>
+                </div>
+            </li><!-- end ngRepeat: api in apis.hits -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+    <!-- /.banner -->
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+          <div class="row">
+              <div class="center-block">
+                    <p class="copyright text-muted small">Copyright &copy; <a href="http://www.modernisation.gouv.fr/">SGMAP</a> 2016. All Rights Reserved <a href="mailto:contact@api.sgmap.fr">contact@api.sgmap.fr</a></p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hotjar Tracking Code for octo.com -->
+</div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- Hotjar Tracking Code for http://sgmap.github.io/mas/client/landingpage.html -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:138730,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+      <!-- bower:js -->
+      <!-- endbower -->
+    <!-- endbuild -->
+
+
+        <!-- build:js(.tmp) app/app.js -->
+
+          <!-- endinjector -->
+        <!-- endbuild -->
+</body>
+</html>
