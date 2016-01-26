@@ -53,6 +53,7 @@
     </nav>
 
 
+    
     <!-- Header -->
     <a name="about"></a>
     <div class="intro-header">
@@ -67,7 +68,9 @@
                           </div>
                           <button type="submit" class="btn btn-default">Rechercher</button>
                         </form>
+                        <div class="exemples">
                         <p>Exemples : <a href="">attestation fiscale</a>, <a href="">sélectionner une parcelle</a>, <a href="">adresse</a>, <a hred="">coût d’embauche</a>, <a href="">aides sociales</a> ...</p>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -87,8 +90,25 @@
             <div class="row">
                 <div class="col-lg-7 col-sm-9">
                     <h2 class="section-heading">Pourquoi api.gouv ?</h2>
-                    <p class="lead">Pour authentifier simplement un usager, pour ne pas demander des informations confidentielles que l’administration possède déjà, pour guider l'usager dans sa saisie d'informations, pour contextualiser un service dans sa situation personnelle, ... autant de cas d'usage disponible via les API de l'Etat.</p>
+                    <p class="lead">Pour authentifier simplement un usager, pour le guider dans la saisie d'informations, pour ne pas lui demander des informations que l’administration possède déjà, pour personnaliser un service selon la situation de l’usager, ... autant de cas d'usage disponible via les API de l'Etat. A vous de créer d’autres usages.</p>
                 </div>
+                <div class="col-rg-3 col-lg-offset-1 col-sm-3"><a href="/apis">Voir toutes nos apis</a>
+                  <table id="taxonomie">
+                    <tr>
+                      <td class="taxonomie sdap"><span class="sigle">AP</span><span class="detail">Accès sécurisé à des données confidentielles</span></td>
+                      <td class="circles-separator"></td>
+                      <td class="taxonomie ascdr"><span class="sigle">ASCDR</span><span class="detail">Aide à la saisie & contrôle de données de référence</span></td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" class="circles-separator">
+                    </tr>           
+                    <tr>
+                      <td class="taxonomie cs"><span class="sigle">CS</span><span class="detail">Calculs & simulations</span></td>
+                      <td></td>
+                      <td class="taxonomie sd"><span class="sigle">SD</span><span class="detail">Smart Data</span></td>
+                    </tr>
+                  </table>
+              </div>
             </div>
 
         </div>
@@ -110,14 +130,14 @@
                             <li class="col-md-6 col-sm-6">
                                 <div class="card dataset-card">
                                     <a class="card-logo" href="#">
-                                        <img alt="LaBonneBoite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%">
+                                        <img alt="La bonne boite" src="img/ecran_labonneboite.jpg" width="100%">
                                     </a>
                                     <div class="card-body">
                                         <h4>
-                                            <a href="#" title="LaBonneBoite">LaBonneBoite utilise l'API BAN</a>
+                                            <a href="#" title="La bonne boîte">LaBonneBoite utilise l'API BAN</a>
                                         </h4>
                                     </div>
-                                    <a class="rollover fade in" href="#" title="LaBonneBoite">
+                                    <a class="rollover fade in" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
                                         Avec la BAN votre adresse se complète avec vous
                                     </a>
                                 </div>
@@ -125,14 +145,14 @@
                             <li class="col-md-6 col-sm-6">
                                 <div class="card dataset-card">
                                     <a class="card-logo" href="#">
-                                        <img alt="Marchés Sécurisés" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_MPS.jpg" width="100%">
+                                        <img alt="Marchés Sécurisés" src="img/ecran_MPS.jpg" width="100%">
                                     </a>
                                     <div class="card-body">
                                         <h4>
                                             <a href="#" title="Marchés Sécurisés">Marchés Sécurisés utilise MPS</a>
                                         </h4>
                                     </div>
-                                    <a class="rollover fade in" href="/fr/datasets/reserve-parlementaire/" title="Marchés Sécurisés">
+                                    <a class="rollover fade in" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
                                         Un SIRET et MPS fait le reste
                                     </a>
                                 </div>
@@ -176,13 +196,16 @@
                             <li class="col-md-6 col-sm-6">
                                 <div class="card dataset-card">
                                     <a class="card-logo" href="#">
-                                        <img alt="Mes aides" src="http://www.data.gouv.fr/s/avatars/2015-06-19/b9a6ba86634147d5b6c8758274bc657d/assemblee-nationale-100.png" width="100%">
+                                        <img alt="Mes aides" src="img/ecran_mesaides.jpg" width="100%">
                                     </a>
                                     <div class="card-body">
                                         <h4>
                                             <a href="#" title="Mes aides">Mes-aides utilise OpenFisca</a>
                                         </h4>
                                     </div>
+                                    <a class="rollover fade in" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+                                        Touvez toutes vos informations fiscales
+                                    </a>
                                 </div>
                             </li>
                         </ul>
@@ -201,6 +224,49 @@
 
   </div>
     <!-- /.banner -->
+
+
+<script type="text/javascript">
+  
+
+  var INDEX_NAME = "mas";
+  var PARAMS = {
+    hitsPerPage: 10,
+    maxValuesPerFacet: 8,
+    facets: ['donnees', 'activites'],
+    disjunctiveFacets: ['particulier', 'entreprise']
+  };
+
+  var client = algoliasearch('QZ81AZLZUG', '6eb1bd16ced3bec22dc77160762829b8');
+  var index = client.initIndex(INDEX_NAME);
+
+  $('#recherche').autocomplete({ hint: false }, [
+    {
+      source: function(q, cb) {
+        // console.log("search : " + cb);
+        index.search(q, { hitsPerPage: 15 }, function(error, content) {
+          if (error) {
+            cb([]);
+            return;
+          }
+          cb(content.hits, content);
+          console.log(content);
+        });
+      },
+      displayKey: 'name',
+      templates: {
+        suggestion: function(suggestion) {
+          return suggestion._highlightResult.API.value;
+        }
+      }
+    }
+  ]).on('autocomplete:selected', function(event, suggestion, dataset) {
+    //window.location = '/api/infoGen/' + suggestion.id;
+  });
+
+
+</script>
+
 
     <!-- Footer -->
     <footer>
