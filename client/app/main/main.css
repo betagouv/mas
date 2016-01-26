@@ -53,6 +53,7 @@ h6 {
 
 .intro-message p a {
     color: white;
+    font-weight: normal;
 }
 
 .intro-divider {
@@ -63,6 +64,12 @@ h6 {
 
 .intro-message > h3 {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+.exemples {
+    margin-left: auto;
+    margin-right: auto;
+    width: 295px;
 }
 
 .circle {
