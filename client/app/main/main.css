@@ -18,7 +18,6 @@ h4,
 h5,
 h6 {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
 }
 
 .topnav {
@@ -83,6 +82,13 @@ h6 {
     padding: 2px;
     text-align: center;
 }
+.small-taxonomie {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
 .circles-separator {
     height: 3px;
     width: 3px;
@@ -92,14 +98,8 @@ h6 {
     display: initial;
 }
 .detail { 
-    /*display: none;*/
-    font-size: 12px
-}
-.taxonomie:hover .sigle{
-    /*display: none;*/
-}
-.taxonomie:hover .detail{ 
-    display: block;
+    font-size: 16px;
+    padding: 20px;
 }
 
 .title-sdap a {
@@ -616,15 +616,14 @@ p.copyright {
 }
 .card a.rollover {
     background: hsla(0, 0%, 100%, .91);
-    font-size: 13px;
-    line-height: 13px;
+    font-size: 18px;
     position: absolute;
     display: none;
     top: 0;
     left: 0;
     right: 0;
     height: 100%;
-    padding: 10px;
+    padding: 20px;
     overflow: hidden;
     color: #5e5e5e;
     text-decoration: none;
@@ -645,6 +644,6 @@ p.copyright {
     color: rgb(51, 51, 51);
 }
 
-#apis .dataset-card p a {
+#apis .dataset-card a {
     color: rgb(51, 51, 51);
 }
