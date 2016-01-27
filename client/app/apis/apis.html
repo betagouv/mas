@@ -6,16 +6,14 @@
 				<ul id="apis" class="card-list">
 				    <li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6">
 				        <div class="card dataset-card">
-				            <a class="card-logo" href="#">
-				                <!-- <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%"> -->
-
+				            <a class="card-logo" href="/detail/{{api.objectID}}">
 				            </a>
 				            <div class="card-body">
 				                <h4>
-				                    <a href="#" title="La bonne boîte">{{api.API}}</a>
+				                    <a href="/detail/{{api.objectID}}" title="La bonne boîte">{{api.API}}</a>
 				                </h4>
 				            </div>
-				            <a class="rollover fade in" href="/fr/datasets/reserve-parlementaire/" title="Réserve parlementaire ">
+				            <a class="rollover fade in" href="/detail/{{api.objectID}}" title="Réserve parlementaire ">
 				                {{api.Pitch}}
 				            </a>
 				        </div>
