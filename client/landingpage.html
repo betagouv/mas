@@ -241,6 +241,54 @@
     <!-- Hotjar Tracking Code for octo.com -->
 </div>
 
+
+
+<script type="text/javascript">
+  
+
+  var INDEX_NAME = "mas";
+  var PARAMS = {
+    hitsPerPage: 10,
+    maxValuesPerFacet: 8,
+    facets: ['donnees', 'activites'],
+    disjunctiveFacets: ['particulier', 'entreprise']
+  };
+
+  var client = algoliasearch('QZ81AZLZUG', '6eb1bd16ced3bec22dc77160762829b8');
+  var index = client.initIndex(INDEX_NAME);
+
+  $('#recherche').autocomplete({ hint: false }, [
+    {
+      source: function(q, cb) {
+        // console.log("search : " + cb);
+        index.search(q, { hitsPerPage: 15 }, function(error, content) {
+          if (error) {
+            cb([]);
+            return;
+          }
+          cb(content.hits, content);
+          console.log(content);
+        });
+      },
+      displayKey: 'name',
+      templates: {
+        suggestion: function(suggestion) {
+          return suggestion._highlightResult.API.value;
+        }
+      }
+    }
+  ]).on('autocomplete:selected', function(event, suggestion, dataset) {
+    //window.location = '/api/infoGen/' + suggestion.id;
+  });
+
+
+</script>
+
+        <script src="/mas/client/bower_components/algolia-autocomplete.js/dist/autocomplete.jquery.min.js"></script>
+        <script src="/mas/client/bower_components/algoliasearch/dist/algoliasearch.min.js"></script>
+        <script src="/mas/client/bower_components/algoliasearch-helper/dist/algoliasearch.helper.js"></script>
+        
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
