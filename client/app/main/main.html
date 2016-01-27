@@ -40,17 +40,17 @@
                 <div class="col-rg-3 col-lg-offset-1 col-sm-4">
                   <table id="taxonomie">
                     <tr>
-                      <td class="taxonomie sdap"><h3 class="sigle">AP</h3><p class="detail">Accès sécurisé à des données confidentielles</p></td>
+                      <td class="taxonomie sdap"><p class="detail">Accès sécurisé à des données confidentielles</p></td>
                       <td class="circles-separator"></td>
-                      <td class="taxonomie ascdr"><h3 class="sigle">ASCDR</h3><p class="detail">Aide à la saisie & contrôle de données de référence</p></td>
+                      <td class="taxonomie ascdr"><p class="detail">Aide à la saisie & contrôle de données de référence</p></td>
                     </tr>
                     <tr>
                       <td colspan="3" class="circles-separator">
                     </tr>           
                     <tr>
-                      <td class="taxonomie cs"><h3 class="sigle">CS</h3><p class="detail">Calculs & simulations</p></td>
+                      <td class="taxonomie cs"><p class="detail">Calculs & simulations</p></td>
                       <td></td>
-                      <td class="taxonomie sd"><h3 class="sigle">SD</h3><p class="detail">Smart Data</p></td>
+                      <td class="taxonomie sd"><p class="detail">Smart Data</p></td>
                     </tr>
                   </table>
                   <div class="allApis">
@@ -78,7 +78,7 @@
                             <li class="col-md-6 col-sm-6">
                                 <div class="card dataset-card">
                                     <a class="card-logo" href="#">
-                                        <img alt="La bonne boite" src="mas/client/img/ecran_labonneboite.jpg" width="100%">
+                                        <img alt="La bonne boite" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_labonneboite.jpg" width="100%">
                                     </a>
                                     <div class="card-body">
                                         <h4>
@@ -93,7 +93,7 @@
                             <li class="col-md-6 col-sm-6">
                                 <div class="card dataset-card">
                                     <a class="card-logo" href="#">
-                                        <img alt="Marchés Sécurisés" src="mas/client/img/ecran_MPS.jpg" width="100%">
+                                        <img alt="Marchés Sécurisés" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/ecran_MPS.jpg" width="100%">
                                     </a>
                                     <div class="card-body">
                                         <h4>
@@ -108,7 +108,7 @@
                             <li class="col-md-6 col-sm-6">
                                 <div class="card dataset-card">
                                     <a class="card-logo" href="#">
-                                        <img alt="FranceAgrimer" src="mas/client/img/vitplantation.jgp" width="100%">
+                                        <img alt="FranceAgrimer" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/vitiplantation.jpg" width="100%">
                                     </a>
                                     <div class="card-body">
                                         <h4>
@@ -121,7 +121,7 @@
                                     </a>
                                 </div>
                             </li>
-                            <li class="col-md-6 col-sm-6">
+                            <!--li class="col-md-6 col-sm-6">
                                 <div class="card dataset-card">
                                     <a class="card-logo" href="#">
                                         <img alt="BPI" src="http://www.data.gouv.fr/s/avatars/2015-06-19/b9a6ba86634147d5b6c8758274bc657d/assemblee-nationale-100.png" width="100%">
@@ -135,11 +135,11 @@
                                         BPI
                                     </a>
                                 </div>
-                            </li>
+                            </li-->
                             <li class="col-md-6 col-sm-6">
                                 <div class="card dataset-card">
                                     <a class="card-logo" href="#">
-                                        <img alt="Bourses simplifiée" src="http://www.data.gouv.fr/s/avatars/2015-06-19/b9a6ba86634147d5b6c8758274bc657d/assemblee-nationale-100.png" width="100%">
+                                        <img alt="Bourses simplifiée" src="http://images.itnewsinfo.com/lmi/articles/originale/000000046053.jpg" width="100%">
                                     </a>
                                     <div class="card-body">
                                         <h4>
@@ -154,7 +154,7 @@
                             <li class="col-md-6 col-sm-6">
                                 <div class="card dataset-card">
                                     <a class="card-logo" href="#">
-                                        <img alt="Mes aides" src="mas/client/img/mes-aides.jpg" width="100%">
+                                        <img alt="Mes aides" src="https://raw.githubusercontent.com/sgmap/mas/gh-pages/client/img/mes-aides.jpg" width="100%">
                                     </a>
                                     <div class="card-body">
                                         <h4>
@@ -220,7 +220,8 @@
     }
   ]).on('autocomplete:selected', function(event, suggestion, dataset) {
     console.log(suggestion);
-    window.location = '/detail/' + suggestion.objectID;
+    // window.location = '/detail/' + suggestion.objectID;
+    window.location = 'mas/client/detail.html';
   });
 
 
