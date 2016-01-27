@@ -2,3 +2,20 @@
 <h1></h1>
 <p></p>
 </div>
+
+
+<script type="text/javascript">
+  
+
+  var INDEX_NAME = "mas";
+  var PARAMS = {
+    hitsPerPage: 10,
+    maxValuesPerFacet: 8,
+    facets: ['donnees', 'activites'],
+    disjunctiveFacets: ['particulier', 'entreprise']
+  };
+
+  var client = algoliasearch('QZ81AZLZUG', '6eb1bd16ced3bec22dc77160762829b8');
+  var index = client.initIndex(INDEX_NAME);
+
+ </script>

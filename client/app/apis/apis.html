@@ -4,18 +4,18 @@
 			<div class="col-md-12">
 				<h1 class="section-heading">Toutes nos APIs</h1>
 				<ul id="apis" class="card-list">
-				    <li ng-repeat="api in apis.hits" class="col-md-6 col-sm-6">
+				    <li ng-repeat="api in apis.hits" class="col-md-12 col-sm-12">
 				        <div class="card dataset-card">
 				            <a class="card-logo" href="/detail/{{api.objectID}}">
 				            </a>
 				            <div class="card-body">
-				                <h4>
+				                <h2 class="section-heading title-{{api.categorieCode}}">
 				                    <a href="/detail/{{api.objectID}}" title="La bonne boîte">{{api.API}}</a>
-				                </h4>
+				                </h2>
+				                <p><a href="/detail/{{api.objectID}}" title="Réserve parlementaire ">{{api.Pitch}}</a></p>
+				            	
 				            </div>
-				            <a class="rollover fade in" href="/detail/{{api.objectID}}" title="Réserve parlementaire ">
-				                {{api.Pitch}}
-				            </a>
+				            
 				        </div>
 				    </li>
 				</ul>

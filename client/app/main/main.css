@@ -51,9 +51,10 @@ h6 {
     font-size: 4em;
 }
 
-.intro-message p a {
+.intro-message p, .intro-message p a {
     color: white;
     font-weight: normal;
+    font-style: italic;
 }
 
 .intro-divider {
@@ -77,8 +78,8 @@ h6 {
     height: 100px;
 }
 .taxonomie {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     padding: 2px;
     text-align: center;
 }
@@ -91,21 +92,27 @@ h6 {
     display: initial;
 }
 .detail { 
-    display: none;
+    /*display: none;*/
     font-size: 12px
 }
 .taxonomie:hover .sigle{
-    display: none;
+    /*display: none;*/
 }
 .taxonomie:hover .detail{ 
     display: block;
 }
 
+.title-sdap a {
+    color: lightcoral;: 
+}
 .sdap {
     background: lightcoral;
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-top-left-radius: 50%;
+}
+.title-ascdr a {
+    color: lightgreen;
 }
 .ascdr {
     background: lightgreen;
@@ -113,17 +120,28 @@ h6 {
     border-bottom-right-radius: 50%;
     border-top-left-radius: 50%;
 }
+.title-cs a {
+    color: lightskyblue;
+}
 .cs {
     background: lightskyblue;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     border-top-left-radius: 50%;
 }
+.title-sd a {
+    color: lightsalmon;
+}
 .sd {
     background: lightsalmon;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     border-top-right-radius: 50%;
+}
+.allApis {
+    width: 140px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
@@ -623,5 +641,10 @@ p.copyright {
 }
 
 #apis .dataset-card {
-    height: 100px;
+    height: 200px;
+    color: rgb(51, 51, 51);
+}
+
+#apis .dataset-card p a {
+    color: rgb(51, 51, 51);
 }

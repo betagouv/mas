@@ -10,7 +10,7 @@ angular.module('masApp', [
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .otherwise({
-        redirectTo: '/mas/client/demo.html'
+        redirectTo: '/mas/client/'
       });
 
     $locationProvider.html5Mode(true);

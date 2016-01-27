@@ -33,26 +33,29 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 col-sm-9">
+                <div class="col-lg-7 col-sm-8">
                     <h2 class="section-heading">Pourquoi api.gouv ?</h2>
                     <p class="lead">Pour authentifier simplement un usager, pour le guider dans la saisie d'informations, pour ne pas lui demander des informations que l’administration possède déjà, pour personnaliser un service selon la situation de l’usager, ... autant de cas d'usage disponible via les API de l'Etat. A vous de créer d’autres usages.</p>
                 </div>
-                <div class="col-rg-3 col-lg-offset-1 col-sm-3"><a href="/apis">Voir toutes nos apis</a>
+                <div class="col-rg-3 col-lg-offset-1 col-sm-4">
                   <table id="taxonomie">
                     <tr>
-                      <td class="taxonomie sdap"><span class="sigle">AP</span><span class="detail">Accès sécurisé à des données confidentielles</span></td>
+                      <td class="taxonomie sdap"><h3 class="sigle">AP</h3><p class="detail">Accès sécurisé à des données confidentielles</p></td>
                       <td class="circles-separator"></td>
-                      <td class="taxonomie ascdr"><span class="sigle">ASCDR</span><span class="detail">Aide à la saisie & contrôle de données de référence</span></td>
+                      <td class="taxonomie ascdr"><h3 class="sigle">ASCDR</h3><p class="detail">Aide à la saisie & contrôle de données de référence</p></td>
                     </tr>
                     <tr>
                       <td colspan="3" class="circles-separator">
                     </tr>           
                     <tr>
-                      <td class="taxonomie cs"><span class="sigle">CS</span><span class="detail">Calculs & simulations</span></td>
+                      <td class="taxonomie cs"><h3 class="sigle">CS</h3><p class="detail">Calculs & simulations</p></td>
                       <td></td>
-                      <td class="taxonomie sd"><span class="sigle">SD</span><span class="detail">Smart Data</span></td>
+                      <td class="taxonomie sd"><h3 class="sigle">SD</h3><p class="detail">Smart Data</p></td>
                     </tr>
                   </table>
+                  <div class="allApis">
+                  <a  href="/mas/client/apis">Voir toutes nos apis</a>
+              </div>
               </div>
             </div>
 
@@ -206,7 +209,8 @@
       }
     }
   ]).on('autocomplete:selected', function(event, suggestion, dataset) {
-    //window.location = '/api/infoGen/' + suggestion.id;
+    console.log(suggestion);
+    window.location = '/detail/' + suggestion.objectID;
   });
 
 
