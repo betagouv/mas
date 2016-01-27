@@ -3,7 +3,7 @@
 angular.module('masApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/mas/client/demo.html', {
         templateUrl: 'mas/client/app/main/main.html',
         controller: 'MainCtrl'
       });
