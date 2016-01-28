@@ -139,7 +139,7 @@
     $("#name").text(content["API"]);
     $("#cgu").text(content["Conditions d'utilisation"]);
     var contraintes = content["Contraintes"]
-    if (contraintes.length == 0) {
+    if (contraintes =='') {
       $("#contraintes-p").hide();
     }
     else {
