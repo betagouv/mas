@@ -98,12 +98,13 @@ h6 {
 
 .sigle {
     display: initial;
+    font-weight: 500;
+    font-size: 16px;
 }
-
 
 .detail { 
     display: none;
-    /*font-size: 12px*/
+    font-size: 12px
 }
 .taxonomie:hover .sigle{
     display: none;
@@ -111,6 +112,11 @@ h6 {
 .taxonomie:hover .detail{ 
     display: block;
 }
+
+/*.taxonomie p {
+    width: 200px;
+    height: 200px;
+}*/
 
 .title-sdap a {
     color: lightcoral;: 
