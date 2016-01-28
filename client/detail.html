@@ -17,10 +17,10 @@
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
-    <link rel="stylesheet" href="/mas/client/app/app.css">
+    <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
-      <link rel="stylesheet" href="/mas/client/app/app.css">
-      <link rel="stylesheet" href="/mas/client/app/main/main.css">
+      <link rel="stylesheet" href="app/app.css">
+      <link rel="stylesheet" href="app/main/main.css">
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
@@ -45,7 +45,7 @@
                 </button>
                 <ul class="nav navbar-nav">
                   <li><img class="logo" src="https://apiparticulier.sgmap.fr/cb7bdeec0297d4d4d42677856c354a7d.png" alt="Accueil - apiparticulier.sgmap.fr"></li>
-                  <li><a ui-sref="landingPage" class="navbar-brand title" title="Accueil - api.gouv.fr" href="/mas/client/landingpage.html">API.GOUV.FR</a></li>
+                  <li><a ui-sref="landingPage" class="navbar-brand title" title="Accueil - api.gouv.fr" href="./">API.GOUV.FR</a></li>
                 </ul>
             </div>
         </div>
@@ -65,7 +65,7 @@
               <li id="r2" class="col-sm-6 medium-taxonomie ascdr"></li>
               <li id="r3" class="col-sm-6 medium-taxonomie cs"></li>
               <li id="r4" class="col-sm-6 medium-taxonomie sd"></li>
-            </ul>  
+            </ul>
           </div>
           <div class="col-sm-9 cartouche">
             <p><strong>Conditions d'utilisation : </strong><span id="cgu"></span></p>
@@ -103,13 +103,13 @@
 </div>
 
 
-        <script src="/mas/client/bower_components/jquery/dist/jquery.js"></script>
-      
-        <script src="/mas/client/bower_components/algoliasearch/dist/algoliasearch.min.js"></script>
-        <script src="/mas/client/bower_components/algoliasearch-helper/dist/algoliasearch.helper.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+
+        <script src="bower_components/algoliasearch/dist/algoliasearch.min.js"></script>
+        <script src="bower_components/algoliasearch-helper/dist/algoliasearch.helper.js"></script>
 
 <script type="text/javascript">
-  
+
   var getQueryString = function ( field, url ) {
     var href = url ? url : window.location.href;
     var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
@@ -191,7 +191,7 @@
       ga('send', 'pageview');
     </script>
 
-    <!-- Hotjar Tracking Code for http://sgmap.github.io/mas/client/landingpage.html -->
+    <!-- Hotjar Tracking Code for http://sgmap.github.iolandingpage.html -->
 <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
