@@ -61,10 +61,10 @@
         <div class="col-sm-12">
           <div class="col-sm-3 rosace">
             <ul card-list>
-              <li class="col-sm-6 medium-taxonomie sdap"></li>
-              <li class="col-sm-6 medium-taxonomie rosace-none rosace-none-top-right"></li>
-              <li class="col-sm-6 medium-taxonomie rosace-none rosace-none-bottom-left"></li>
-              <li class="col-sm-6 medium-taxonomie rosace-none rosace-none-bottom-right"></li>
+              <li id="r1" class="col-sm-6 medium-taxonomie sdap"></li>
+              <li id="r2" class="col-sm-6 medium-taxonomie ascdr"></li>
+              <li id="r3" class="col-sm-6 medium-taxonomie cs"></li>
+              <li id="r4" class="col-sm-6 medium-taxonomie sd"></li>
             </ul>  
           </div>
           <div class="col-sm-9 cartouche">
@@ -143,9 +143,34 @@
     $("#cible").text(content["Cible finale"])
     $("#sources").text(content["Sources/Producteurs"])
     $("#pitch").text(content["Pitch"])
-    $("#docTect").text(content["Documentation technique"])
-    $("#docTect").attr('href', content["Documentation technique"])
+
+    var url = content["Documentation technique"];
+    if (!url.startsWith('http')) {
+      url = "http://" + url;
+    }
+    $("#docTech").text(url)
+    $("#docTech").attr('href', url)
+
     $("#keys").text(content["Mots-clés"])
+
+    var code = content["categorieCode"];
+    if (code == "sdap") {
+      $("#r2").addClass("rosace-none")
+      $("#r3").addClass("rosace-none")
+      $("#r4").addClass("rosace-none")
+    } else if (code == "ascdr") {
+      $("#r1").addClass("rosace-none")
+      $("#r3").addClass("rosace-none")
+      $("#r4").addClass("rosace-none")
+    } else if (code == "cs") {
+      $("#r1").addClass("rosace-none")
+      $("#r2").addClass("rosace-none")
+      $("#r4").addClass("rosace-none")
+    } else {
+      $("#r1").addClass("rosace-none")
+      $("#r2").addClass("rosace-none")
+      $("#r3").addClass("rosace-none")
+    }
   })
  </script>
 
