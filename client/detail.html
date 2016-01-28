@@ -56,7 +56,7 @@
       <div class="container col-sm-">
         <div class="row">
         <div class="col-sm-12 title">
-          <h1>laBonneFormation</h1>
+          <h1 id="name"></h1>
         </div>
         <div class="col-sm-12">
           <div class="col-sm-3 rosace">
@@ -136,6 +136,7 @@
   index.getObject(i, function(err, content) {
     console.log(content);
     // var c = JSON.parse(content);
+    $("#name").text(content["API"]);
     $("#cgu").text(content["Conditions d'utilisation"]);
     $("#contraintes").text(content["Contraintes"])
     $("#cible").text(content["Cible finale"])
