@@ -69,7 +69,7 @@
           </div>
           <div class="col-sm-9 cartouche">
             <p><strong>Conditions d'utilisation : </strong><span id="cgu"></span></p>
-            <p><strong>Contraintes : </strong><span id="contraintes">Mise à disposition gratuite pour le demandeur d'emploi</span></p>
+            <p id="contraintes-p"><strong>Contraintes : </strong><span id="contraintes">Mise à disposition gratuite pour le demandeur d'emploi</span></p>
             <p><strong>Clients cibles : </strong><span id="cible"></span></p>
             <p><strong>Sources et partenaires : </strong><span id="sources"></span></p>
           </div>
@@ -138,7 +138,13 @@
     // var c = JSON.parse(content);
     $("#name").text(content["API"]);
     $("#cgu").text(content["Conditions d'utilisation"]);
-    $("#contraintes").text(content["Contraintes"])
+    var contraintes = content["Contraintes"]
+    if (contraintes.length == 0) {
+      $("#contraintes-p").hide();
+    }
+    else {
+      $("#contraintes").text(contraintes)
+    }
     $("#cible").text(content["Cible finale"])
     $("#cible").text(content["Cible finale"])
     $("#sources").text(content["Sources/Producteurs"])
