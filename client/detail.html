@@ -52,30 +52,36 @@
         <!-- /.container -->
     </nav>
 
-<div class="content-section-b ng-scope">
-  <div class="container">
-    <div class="row">
-    <h1>laBonneFormation</h1>
-<dl>
-	<dt>Cible finale:</dt>
- 	<dd>particulier & entreprise</dd>
-	<dt>Catégorie:</dt>
- <dd>Smart Data</dd>
-<dt>Type:</dt>
- <dd>API</dd>
-<dt>Sources/Producteurs:</dt>
- <dd>Pôle Emploi, InterCarif</dd>
-<dt>Pitch:</dt>
- <dd>Recherchez une formation efficace pour le retour à l'emploi. Les formations sont disponibles sur la France entière et triés par Taux de Retour à l'Emploi dans les 12 mois. Le moteur liste également les financements disponibles selon le contexte du demandeur (apprentissage, chômage, insertion, compte personnel formation ...).</dd>
-<dt>Conditions d'utilisation:</dt>
- <dd>OUVERT sur contrat</dd>
-<dt>Contraintes:</dt>
- <dd>Mise à disposition gratuite pour le demandeur d'emploi</dd>
-<dt>Documentation technique:</dt>
- <dd>labonneformation.pole-emploi.fr</dd>
-  </div>
-  </div>
-  </div>
+    <div class="content-section-b ng-scope details">
+      <div class="container col-sm-">
+        <div class="row">
+        <div class="col-sm-12 title">
+          <h1>laBonneFormation</h1>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-3 rosace">
+            <ul card-list>
+              <li class="col-sm-6 medium-taxonomie sdap"></li>
+              <li class="col-sm-6 medium-taxonomie rosace-none rosace-none-top-right"></li>
+              <li class="col-sm-6 medium-taxonomie rosace-none rosace-none-bottom-left"></li>
+              <li class="col-sm-6 medium-taxonomie rosace-none rosace-none-bottom-right"></li>
+            </ul>
+          </div>
+          <div class="col-sm-9 cartouche">
+            <p><strong>Conditions d'utilisation : </strong><span id="cgu"></span></p>
+            <p><strong>Contraintes : </strong><span id="contraintes">Mise à disposition gratuite pour le demandeur d'emploi</span></p>
+            <p><strong>Clients cibles : </strong><span id="cible"></span></p>
+            <p><strong>Sources et partenaires : </strong><span id="sources"></span></p>
+          </div>
+        </div>
+        <div class="col-sm-12 pitch">
+          <p id="pitch"></p>
+          <p><strong>Documentation technique : </strong><a id="docTech" href=""></a></p>
+          <p><strong>Mots clés : </strong><span id="keys"></span></p>
+        </div>
+        </div>
+      </div>
+    </div>
   </div>
     <!-- /.banner -->
 
@@ -95,6 +101,52 @@
 
     <!-- Hotjar Tracking Code for octo.com -->
 </div>
+
+
+        <script src="/mas/client/bower_components/jquery/dist/jquery.js"></script>
+      
+        <script src="/mas/client/bower_components/algoliasearch/dist/algoliasearch.min.js"></script>
+        <script src="/mas/client/bower_components/algoliasearch-helper/dist/algoliasearch.helper.js"></script>
+
+<script type="text/javascript">
+  
+  var getQueryString = function ( field, url ) {
+    var href = url ? url : window.location.href;
+    var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+    var string = reg.exec(href);
+    return string ? string[1] : null;
+};
+
+
+  var INDEX_NAME = "mas";
+  var PARAMS = {
+    hitsPerPage: 10,
+    maxValuesPerFacet: 8,
+    facets: ['donnees', 'activites'],
+    disjunctiveFacets: ['particulier', 'entreprise']
+  };
+
+  var client = algoliasearch('QZ81AZLZUG', '6eb1bd16ced3bec22dc77160762829b8');
+  var index = client.initIndex(INDEX_NAME);
+
+
+  var i = getQueryString("id");
+  // console.log(i);
+
+  index.getObject(i, function(err, content) {
+    console.log(content);
+    // var c = JSON.parse(content);
+    $("#cgu").text(content["Conditions d'utilisation"]);
+    $("#contraintes").text(content["Contraintes"])
+    $("#cible").text(content["Cible finale"])
+    $("#cible").text(content["Cible finale"])
+    $("#sources").text(content["Sources/Producteurs"])
+    $("#pitch").text(content["Pitch"])
+    $("#docTect").text(content["Documentation technique"])
+    $("#docTect").attr('href', content["Documentation technique"])
+    $("#keys").text(content["Mots-clés"])
+  })
+ </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
