@@ -81,6 +81,8 @@ h6 {
     height: 200px;
     padding: 2px;
     text-align: center;
+    font-weight: 500px;
+    color: white;
 }
 .small-taxonomie {
     width: 50px;
@@ -97,16 +99,24 @@ h6 {
 .sigle {
     display: initial;
 }
+
+
 .detail { 
-    font-size: 16px;
-    padding: 20px;
+    display: none;
+    /*font-size: 12px*/
+}
+.taxonomie:hover .sigle{
+    display: none;
+}
+.taxonomie:hover .detail{ 
+    display: block;
 }
 
 .title-sdap a {
     color: lightcoral;: 
 }
 .sdap {
-    background: lightcoral;
+    background: #28090d;
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-top-left-radius: 50%;
@@ -115,16 +125,17 @@ h6 {
     color: lightgreen;
 }
 .ascdr {
-    background: lightgreen;
+    background: #d4caa3;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     border-top-left-radius: 50%;
+    color: #333333;
 }
 .title-cs a {
     color: lightskyblue;
 }
 .cs {
-    background: lightskyblue;
+    background: #3c7db0;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     border-top-left-radius: 50%;
@@ -133,7 +144,7 @@ h6 {
     color: lightsalmon;
 }
 .sd {
-    background: lightsalmon;
+    background: #132827;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     border-top-right-radius: 50%;
